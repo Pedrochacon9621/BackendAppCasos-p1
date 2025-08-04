@@ -135,10 +135,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
+    "https://frontendappcasos-p1-production.up.railway.app",
     "http://localhost:5173"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://frontendappcasos-p1-production.up.railway.app",
     "http://localhost:5173",
 ] #para las cookies
 
