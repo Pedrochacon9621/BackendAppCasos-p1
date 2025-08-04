@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-katpccu_6oc(5&^jp*&5*-56g(lf*8@0@@1*33h54w#^zr#0+s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'backendappcasos-p1-production.up.railway.app',
+]
 
 
 # Application definition
@@ -82,11 +84,11 @@ WSGI_APPLICATION = 'caseback1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT', '5432'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'LDcsfWeVaacbaUMtGnSIlgNGJPukdfqd',
+        'HOST': 'centerbeam.proxy.rlwy.net',
+        'PORT': '19325',
     }
 }
 
