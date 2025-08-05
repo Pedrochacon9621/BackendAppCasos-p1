@@ -83,12 +83,21 @@ WSGI_APPLICATION = 'caseback1.wsgi.application'
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'LDcsfWeVaacbaUMtGnSIlgNGJPukdfqd',
-        'HOST': 'centerbeam.proxy.rlwy.net',
-        'PORT': '19325',
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT', '5432'),
+
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'railway',
+        #'USER': 'postgres',
+        #'PASSWORD': 'LDcsfWeVaacbaUMtGnSIlgNGJPukdfqd',
+        #'HOST': 'centerbeam.proxy.rlwy.net',
+        #'PORT': '19325',
+        
     }
 }
 
