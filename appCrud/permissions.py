@@ -1,7 +1,8 @@
 from rest_framework.permissions import BasePermission
 import jwt
+import os
 
-SECRET_KEY = 'tu_clave_secreta'
+SECRET_KEY = os.getenv('CLAVESECRETA')
 
 class IsAuthenticatedWithToken(BasePermission):
     def has_permission(self, request, view):

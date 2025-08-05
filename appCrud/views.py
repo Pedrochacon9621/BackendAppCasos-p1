@@ -8,11 +8,12 @@ from rest_framework.permissions import AllowAny
 from .serializer import UsuariosSerializer,UsuariosCSerializer, CategoriasSerializer, ClientesSerializer, ClientesCSerializer, CasosSerializer, CasosCSerializer,ClientesTSerializer
 from .models import Usuarios, Categorias, Clientes, Casos
 from .permissions import IsAuthenticatedWithToken
+import os
 # Create your views here.
 
 #JWT-----------------------------------------------------------------------------------
 # Clave secreta para firmar los tokens (usa una variable de entorno en producción)
-SECRET_KEY = 'tu_clave_secreta'
+SECRET_KEY = os.getenv('CLAVESECRETA')
 
 #LOGIN----------------------------------------------------------------------------------------
 class LoginJWT(APIView):
