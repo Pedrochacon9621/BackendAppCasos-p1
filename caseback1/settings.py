@@ -21,11 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") #La guarde en .env
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") #La guarde en .env!!!!!!!!!!!!!!!!!! MODIFICADO
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#CONFIG PARA PRODUCCION----MODIFICADO:
 ALLOWED_HOSTS = [
     'backendappcasos-p1-production.up.railway.app',
 ]
@@ -90,13 +91,6 @@ DATABASES = {
         'PASSWORD': os.getenv('PGPASSWORD'),
         'HOST': os.getenv('PGHOST'),
         'PORT': os.getenv('PGPORT', '5432'),
-
-        #'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'railway',
-        #'USER': 'postgres',
-        #'PASSWORD': 'LDcsfWeVaacbaUMtGnSIlgNGJPukdfqd',
-        #'HOST': 'centerbeam.proxy.rlwy.net',
-        #'PORT': '19325',
         
     }
 }
@@ -151,7 +145,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://frontendappcasos-p1-production.up.railway.app",
     "http://localhost:5173",
-] #para las cookies
+] #para las cookies PROTECCION PARA SOLO ACEPTAR SOLICITUDES DE LOS DOMINIOS AGREGADOS
 
 #PROTECCION DE RUTAS CON USUARIOS NO LOGUEADOS:
 REST_FRAMEWORK = {

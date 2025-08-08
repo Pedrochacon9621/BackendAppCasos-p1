@@ -68,11 +68,12 @@ class UsuariosView(viewsets.ModelViewSet):
     queryset = Usuarios.objects.all()
     permission_classes = [IsAuthenticatedWithToken]  # Asegurar que tengan token
     ######-VALIDACIONES DE RUTA PARA USERS ESTANDAR--------------------------------------------
+        #Como se envia el token en cada solicitud, de alli recibo de las cookies del front y decodeo el token para obtener el rol de ese usuario
     def create(self, request, *args, **kwargs):
         token = request.headers.get('Authorization')
         token = token.split(' ')[1]
         payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-
+        #SI EL ROL no es admin no puede hacer esta solicitud. Esta logica se repite en varias solicitudes
         if payload.get('rol') != 'admin':
             return Response({'error': 'Acceso denegado: solo permitido para admin'}, status=403)
         return super().create(request, *args, **kwargs)
