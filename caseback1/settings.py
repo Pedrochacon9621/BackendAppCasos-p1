@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+import os #Para llamar a las variables de entorno
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-katpccu_6oc(5&^jp*&5*-56g(lf*8@0@@1*33h54w#^zr#0+s'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") #La guarde en .env
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
