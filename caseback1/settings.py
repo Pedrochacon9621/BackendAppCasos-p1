@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os #Para llamar a las variables de entorno
+import dj_database_url #para base de datos URL, agregado para Render hosting
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,13 +86,14 @@ WSGI_APPLICATION = 'caseback1.wsgi.application'
 
 DATABASES = {
     'default': {
+        dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT', '5432'),
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': os.getenv('PGDATABASE'),
+        #'USER': os.getenv('PGUSER'),
+        #'PASSWORD': os.getenv('PGPASSWORD'),
+        #'HOST': os.getenv('PGHOST'),
+        #'PORT': os.getenv('PGPORT', '5432'),
         
     }
 }
