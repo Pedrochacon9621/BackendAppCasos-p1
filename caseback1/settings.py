@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os #Para llamar a las variables de entorno
+from dotenv import load_dotenv #leer el .env Agregado
+load_dotenv()
+
+
 import dj_database_url #para base de datos URL, agregado para Render hosting
 
 
@@ -86,7 +90,7 @@ WSGI_APPLICATION = 'caseback1.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-   'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+   'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     
     #'default': {
         
