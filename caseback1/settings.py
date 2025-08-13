@@ -86,9 +86,10 @@ WSGI_APPLICATION = 'caseback1.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-
+   'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    
+    #'default': {
+        
         #'ENGINE': 'django.db.backends.postgresql',
         #'NAME': os.getenv('PGDATABASE'),
         #'USER': os.getenv('PGUSER'),
@@ -96,7 +97,7 @@ DATABASES = {
         #'HOST': os.getenv('PGHOST'),
         #'PORT': os.getenv('PGPORT', '5432'),
         
-    }
+#    }
 }
 
 
