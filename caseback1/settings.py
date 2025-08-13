@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") #La guarde en .env!!!!!!!!!!!!!!!!!! MODIFICADO
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #CONFIG PARA PRODUCCION----MODIFICADO:
 ALLOWED_HOSTS = [
