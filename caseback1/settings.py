@@ -30,7 +30,8 @@ DEBUG = True
 
 #CONFIG PARA PRODUCCION----MODIFICADO:
 ALLOWED_HOSTS = [
-    'backendappcasos-p1-production.up.railway.app',
+    'https://backendappcasos-p1.onrender.com',
+    #'backendappcasos-p1-production.up.railway.app',
 ]
 
 
