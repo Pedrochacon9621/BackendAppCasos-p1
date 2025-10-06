@@ -83,7 +83,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'caseback1.wsgi.application'
+#WSGI_APPLICATION = 'caseback1.wsgi.application' #Version por defecto
+WSGI_APPLICATION = 'caseback1.wsgi.app' #para Vercel
 
 
 # Database
